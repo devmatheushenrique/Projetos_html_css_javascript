@@ -51,8 +51,9 @@ header a:hover{
     color: #805500;
 }
 
-main {
-    font-family: sriracha;
+section > pre {
+    white-space: pre-line;
+    font-family: var(--sriracha);
 }
 
 section{
@@ -74,7 +75,7 @@ section.imagem{
     box-shadow: inset 2px 2px 5px #000000;
 }
 
-section.imagem > p{
+section.imagem > pre{
     background-color: rgba(0, 0, 0, 0.188);
     display: inline-block;
     padding: 10px;
