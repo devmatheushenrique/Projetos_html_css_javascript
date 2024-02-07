@@ -1,6 +1,116 @@
 @charset "UTF-8";
 
-/* *{
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&family=Sriracha&display=swap');
+
+:root{
+    --font1: Verdana, Geneva, Tahoma, sans-serif;
+    --passionone: 'Passion One', cursive;
+    --sriracha: 'Sriracha', cursive;
+}
+
+*{
     padding: 0px;
     margin: 0px;
-} */
+}
+
+html, body{
+    min-height: 100vh;
+    background-color: darkgray;
+}
+
+header{
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: var(--font1);
+}
+
+header h1{
+    font-variant: small-caps;
+    font-size: max(5.0vw);
+    padding-top: 50px;
+}
+
+header p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: max(2.0vw);
+    padding-bottom: 50px;
+}
+
+header a{
+    color: white;
+    text-decoration: none; 
+    font-family: sriracha;
+    font-weight: bolder;
+}
+
+header a:hover{
+    text-decoration: underline;
+    color: #805500;
+}
+
+main {
+    font-family: sriracha;
+}
+
+section{
+    line-height: 2em;
+    padding-left: 30px;
+    font-size: max(2.6vw);
+    padding: 2em;
+}
+
+section.normal{
+    background-color: white;
+    color: black;
+}
+
+section.imagem{
+    background-color: gray;
+    color: white;
+    background-attachment: fixed;
+    box-shadow: inset 2px 2px 5px #000000;
+}
+
+section.imagem > p{
+    background-color: rgba(0, 0, 0, 0.188);
+    display: inline-block;
+    padding: 10px;
+    text-shadow: 1px 1px 0px black;
+}
+
+section#img01{
+    background-image: url(../Projeto_cordel/arquivos_projeto/imagens/background001.jpg);
+    background-position: right center;
+    background-size: cover;
+}
+
+section#img02{
+    background-image: url(../Projeto_cordel/arquivos_projeto/imagens/background002.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
+
+
+footer{
+    font-family: var(--font1);
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: max(2.0vw);
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    color: #805500;
+}
