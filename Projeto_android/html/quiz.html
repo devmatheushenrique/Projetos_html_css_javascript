@@ -5,99 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz</title>
   <link rel="stylesheet" href="../css/quiz.css">
-  
+  <script src="../javascript/javascript.js"></script>
 </head>
 <body>
 
 <div class="quiz-container">
   <h1>Quiz sobre Programação</h1>
   <div id="quiz"></div>
-  <button onclick="showResult()">Ver Resultado</button>
+  <button id="resultButton">Ver Resultado</button>
   <p id="result" class="result"></p>
 </div>
 
-<script>
-    const quizData = [
-      {
-        question: "Qual foi o nome da primeira versão de mascote do Android criada pelo desenvolvedor Dan Morrill?",
-        options: ["Dandroids", "Bugdroid", "Danroid", "Robozilla"],
-        correctAnswer: "Dandroids"
-      },
-      {
-        question: "Quem foi a ilustradora responsável por redesenhar o mascote do Android, criando o Bugdroid?",
-        options: ["Dan Morrill", "Irina Blok", "Russa Blok", "Android Artist"],
-        correctAnswer: "Irina Blok"
-      },
-      {
-        question: "Qual foi a principal inspiração para os traços do novo Bugdroid?",
-        options: ["Desenhos animados", "Ilustrações de portas de banheiro", "Jogos de computador", "Logotipos de empresas de tecnologia"],
-        correctAnswer: "Ilustrações de portas de banheiro"
-      },
-      {
-        question: "Em que ano o Google decidiu substituir a nomenclatura de versões do Android baseadas em doces por numerações?",
-        options: ["2015", "2017", "2018", "2020"],
-        correctAnswer: "2020"
-      },
-      {
-        question: "Qual foi a última versão do Android nomeada com base em um doce antes da mudança para numerações?",
-        options: ["Nougat", "Oreo", "Pie", "Jelly Bean"],
-        correctAnswer: "Pie"
-      },
-    ];
-  
-    const quizContainer = document.getElementById("quiz");
-    const resultElement = document.getElementById("result");
-  
-    function buildQuiz() {
-      quizData.forEach((questionData, index) => {
-        const questionDiv = document.createElement("div");
-        questionDiv.classList.add("question");
-        questionDiv.innerHTML = `<p>${index + 1}. ${questionData.question}</p>`;
-        
-        const optionsList = document.createElement("ul");
-        optionsList.classList.add("options");
-  
-        questionData.options.forEach((option, optionIndex) => {
-          const optionItem = document.createElement("li");
-          optionItem.classList.add("option");
-          optionItem.innerHTML = `
-            <label>
-              <input type="radio" name="question${index}" value="${option}">
-              ${option}
-            </label>
-          `;
-          optionsList.appendChild(optionItem);
-        });
-  
-        questionDiv.appendChild(optionsList);
-        quizContainer.appendChild(questionDiv);
-      });
-    }
-  
-    function showResult() {
-      let score = 0;
-      const userAnswers = [];
-      
-      quizData.forEach((questionData, index) => {
-        const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
-        if (selectedOption) {
-          userAnswers.push(selectedOption.value);
-          if (selectedOption.value === questionData.correctAnswer) {
-            score++;
-          }
-        } else {
-          userAnswers.push(null);
-        }
-      });
-  
-      const percentage = (score / quizData.length) * 100;
-      resultElement.textContent = `Você acertou ${score} de ${quizData.length} perguntas (${percentage}%).`;
-  
-      // Você pode fazer mais com os resultados, como exibir respostas corretas, etc.
-    }
-  
-    buildQuiz();
-  </script>
 
 </body>
 </html>
