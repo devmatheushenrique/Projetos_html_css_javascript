@@ -135,13 +135,19 @@ document.addEventListener("DOMContentLoaded", function() {
         const userAnswer = userAnswers[index];
         const correctAnswer = questionData.correctAnswer;
 
-        resultHTML += `<p>${index + 1}. ${questionData.question} - Sua resposta: ${userAnswer ? userAnswer : "Não respondida"}. Resposta correta: ${correctAnswer}.</p>`;
+        const isCorrect = userAnswer === correctAnswer;
+
+        const userAnswerStyle = isCorrect ? 'background-color: #4ECC89;' : 'background-color: #CC4357;';
+
+        resultHTML += `<p style="${userAnswerStyle}">${index + 1}. ${questionData.question} - Sua resposta: ${userAnswer ? userAnswer : "Não respondida"}. Resposta correta: ${correctAnswer}.</p>`;
       });
 
       // Exibe o resultado no elemento resultElement
       resultElement.innerHTML = resultHTML;
     }
   }
+
+  
 
   // Associa a função showResult ao clique do botão resultButton
   if (resultButton) {
