@@ -1,0 +1,25 @@
+/* Estilizações para as pagínas das redes sociais(conteúdo carregado no iframe ao clicar nos botões) */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+    width: 100vw;
+}
+
+a {
+    display: block;
+    background-color: darkred;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bolder;
+    padding: 20px;
+}
+
+a:hover{
+    background-color: red;
+}
